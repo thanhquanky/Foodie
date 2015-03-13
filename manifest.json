@@ -1,19 +1,23 @@
 {
   "manifest_version": 2,
+
   "name": "Foodie",
   "short_name": "Foodie",
-  "description": "",
+  "description": "Are you hungry???",
   "version": "0.0.1",
-  "minimum_chrome_version": "38",
+
+  "browser_action": {
+    "default_icon":"assets/icon_16.png",
+    "default_tittle": "Foodie"
+  },
 
   "icons": {
     "16": "assets/icon_16.png",
     "128": "assets/icon_128.png"
   },
 
-  "app": {
-    "background": {
-      "scripts": ["background.js"]
-    }
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
   }
 }

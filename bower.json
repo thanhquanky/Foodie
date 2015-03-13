@@ -1,10 +1,19 @@
 {
+  "manifest_version": 2,
+
   "name": "Foodie",
+  "description": "Are you hungry???",
   "version": "0.1",
+
   "dependencies": {
     "angular": "1.4",
     "angular-bootstrap": "0.12.1",
     "angular-google-maps": "latest",
-    "angularfire": "latest"
-  }
+    "angularfire": "latest",
+    "bootstrap": "3.1.1"
+  },
+
+  "permissions":[
+  	"notifications"
+  ]
 }

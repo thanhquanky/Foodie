@@ -10,7 +10,7 @@
     "angular-bootstrap": "0.12.1",
     "angular-google-maps": "latest",
     "angularfire": "latest"
-  }
+  },
 
   "permissions":[
   	"notifications"

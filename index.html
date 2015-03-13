@@ -4,27 +4,66 @@
   <title>Foodie</title>
   <link rel="stylesheet" href="styles.css">
   <script src="bower_components/angular.min.js"></script>
+
+  <style>
+   
+    .background_image{    
+            background:url("assets/hungry.png") no-repeat center center fixed;
+            background-size: cover;
+            /*-webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);*/
+          }
+
+    #location{
+      background: transparent;
+    }
+    #food{
+      background: transparent;
+    }
+    #time{
+      background: transparent;
+    }
+    #capacity{
+      background: transparent;
+    }
+    #inputboxes{
+      color: #F00;
+      font-weight: bold;
+    }
+    
+    div{
+      background: rgba(255,255,255,0.75);
+    }
+    
+  </style>
 </head>
 
-<body ng-app="foodie" ng-controller="main">
-    <button ng-click="getLocation()"> HUNGRY???</button>
-    <button ng-click="addLocation()"> SAVE LIFE???</button>
+<body  ng-app="foodie" ng-controller="main">
+    <div class="background_image"> 
+    <div style="width: 190px; height:30px">
+      <button ng-click="getLocation()"> HUNGRY???</button>
+      <button ng-click="addLocation()"> SAVE LIFE???</button>
+    </div>
 
     <div ng-show="showGetLocation" ng-repeat="item in items">
-        Location: {{item.location}}
-        Food: {{item.food}}
-        Capacity: {{item.capacity}}
-        Time: {{item.time}}
+        Location: {{item.location}} </br>
+        Food: {{item.food}}  </br>
+        Capacity: {{item.capacity}}  </br>
+        Time: {{item.time}}  </br>
     </div>
 
-    <div ng-show="showAddLocation">
-        Location <input type="text" id="location" ng-model="myForm.location" ng-minlength="0" ng-maxlength="500">
-        Food <input type="text" id="food" ng-model="myForm.food" ng-minlength="0" ng-maxlength="500">
-        Capacity <input type="text" id="capacity" ng-model="myForm.capacity" ng-minlength="0" ng-maxlength="500">
-        Time <input type="text" id="time" ng-model="myForm.time" ng-minlength="0" ng-maxlength="500">
+    <div id="inputboxes" ng-show="showAddLocation">
+        Location <input name="input" type="text" id="location" ng-model="myForm.location" ng-minlength="0" ng-maxlength="500">
+        Food <input type="text" name="input" id="food" ng-model="myForm.food" ng-minlength="0" ng-maxlength="500">
+        Capacity <input type="text" name="input" id="capacity" ng-model="myForm.capacity" ng-minlength="0" ng-maxlength="500">
+        Time <input type="text" name="input" id="time" ng-model="myForm.time" ng-minlength="0" ng-maxlength="500">
     </div>
-    <div>
+    <div style="text-align:center">
         <button ng-click="submit(myForm)"> Submit</button>
+    </div>
     </div>
 
 

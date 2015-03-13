@@ -6,8 +6,27 @@
   <script src="bower_components/angular.min.js"></script>
 </head>
 
-<body ng-app="foodie">
-  <h1 id="greeting"></h1>
+<body ng-app="foodie" ng-controller="main">
+    <button ng-click="getLocation()"> HUNGRY???</button>
+    <button ng-click="addLocation()"> SAVE LIFE???</button>
+
+    <div ng-show="showGetLocation" ng-repeat="item in items">
+        Location: {{item.location}}
+        Food: {{item.food}}
+        Capacity: {{item.capacity}}
+        Time: {{item.time}}
+    </div>
+
+    <div ng-show="showAddLocation">
+        Location <input type="text" id="location" ng-model="myForm.location" ng-minlength="0" ng-maxlength="500">
+        Food <input type="text" id="food" ng-model="myForm.food" ng-minlength="0" ng-maxlength="500">
+        Capacity <input type="text" id="capacity" ng-model="myForm.capacity" ng-minlength="0" ng-maxlength="500">
+        Time <input type="text" id="time" ng-model="myForm.time" ng-minlength="0" ng-maxlength="500">
+    </div>
+    <div>
+        <button ng-click="submit(myForm)"> Submit</button>
+    </div>
+
 
   <script src="main.js"></script>
   <script src="bower_components/ui-bootstrap.min.js"></script>

@@ -34,6 +34,10 @@
       font-weight: bold;
     }
     
+    div{
+      background: rgba(255,255,255,0.75);
+    }
+    
   </style>
 </head>
 
@@ -49,14 +53,14 @@
         Food: {{item.food}}  </br>
         Capacity: {{item.capacity}}  </br>
         Time: {{item.time}}  </br>
-    </div></br>
+    </div>
 
     <div id="inputboxes" ng-show="showAddLocation">
         Location <input name="input" type="text" id="location" ng-model="myForm.location" ng-minlength="0" ng-maxlength="500">
         Food <input type="text" name="input" id="food" ng-model="myForm.food" ng-minlength="0" ng-maxlength="500">
         Capacity <input type="text" name="input" id="capacity" ng-model="myForm.capacity" ng-minlength="0" ng-maxlength="500">
         Time <input type="text" name="input" id="time" ng-model="myForm.time" ng-minlength="0" ng-maxlength="500">
-    </div></br>
+    </div>
     <div style="text-align:center">
         <button ng-click="submit(myForm)"> Submit</button>
     </div>

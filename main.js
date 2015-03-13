@@ -1,8 +1,11 @@
 
 var foodie = angular.module('foodie', ['firebase','ui.bootstrap']);
+foodie.value('flickrConfig', {
+  user_id: '99179128@N07',
+  api_key: '006d5ace5a1ec6e87d501a2753da1bc7'
+});
 
-
-foodie.controller('MainController', ['$scope', '$firebaseObject', '$firebaseArray', function($scope, $firebaseObject, $firebaseArray) {
+foodie.controller('MainController', ['$scope', '$filter', '$firebaseObject', '$firebaseArray', function($scope,$filter, $firebaseObject, $firebaseArray) {
     Firebase.INTERNAL.forceWebSockets();
     var foodEventRef = new Firebase('https://amber-inferno-7229.firebaseio.com/FoodEvents');
 
@@ -11,9 +14,17 @@ foodie.controller('MainController', ['$scope', '$firebaseObject', '$firebaseArra
     $scope.showGetLocation = false;
     $scope.showAddLocation = false;
 
-    $scope.myInterval = 1000;
+    $scope.myInterval = 5000;
 
+    $scope.newEvent = {
+      'location': '',
+      'time': '',
+      'date': '',
+      'capacity': '',
+      'food': ''
+    }
 
+    $scope.newEvent.date = $filter('date')(new Date(),'MM/dd/yyyy')
 
     $scope.addLocation = function () {
         $scope.showGetLocation = false;
@@ -27,18 +38,8 @@ foodie.controller('MainController', ['$scope', '$firebaseObject', '$firebaseArra
 
     };
 
-    $scope.submit = function(myForm) {
-        var dataObject = {
-            location: $scope.myForm.location,
-            food: $scope.myForm.food,
-            capacity: $scope.myForm.capacity,
-            time: $scope.myForm.time
-        }
-        $scope.foodEvents.$add(dataObject);
+    $scope.submit = function() {
+      $scope.foodEvents.$add($scope.newEvent);
     }
 }]);
 
-foodie.value('flickrConfig', {
-    user_id: '99179128@N07',
-    api_key: '006d5ace5a1ec6e87d501a2753da1bc7'
-  });

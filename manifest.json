@@ -20,6 +20,7 @@
           "bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
           "bower_components/firebase/firebase.js",
           "bower_components/angularfire/dist/angularfire.js",
+          "bower_components/angular-flickr/dist/angular-flickr.min.js",
           "main.js",
           "background.js"],
         "persistent": false

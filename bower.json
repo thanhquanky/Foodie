@@ -10,7 +10,8 @@
     "angular-bootstrap": "0.12.1",
     "angular-google-maps": "latest",
     "angularfire": "latest",
-    "bootstrap": "3.1.1"
+    "bootstrap": "3.1.1",
+    "angular-flickr": "latest"
   },
 
   "permissions":[

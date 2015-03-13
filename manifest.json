@@ -6,11 +6,13 @@
   "description": "Are you hungry???",
   "version": "0.0.1",
   "minimum_chrome_version": "38",
+  "content_security_policy": "script-src 'self' https://cdn.firebase.com https://*.firebaseio.com; https://auth.firebase.com; object-src 'self'",
 
   "icons": {
     "16": "assets/icon_16.png",
     "128": "assets/icon_128.png"
   },
+
   "app": {
     "background": {
         "scripts": [
